@@ -1,6 +1,12 @@
-# Página Gimnasio
+# Nombre del Proyecto
+
+Página Gimnasio
+
+## Descripción
 
 Aplicación web en Django para gestión de gimnasio, venta de planes, administración de usuarios y creación/seguimiento de rutinas de ejercicio.
+
+## Instalación
 
 ## Tecnologías
 
@@ -12,14 +18,14 @@ Aplicación web en Django para gestión de gimnasio, venta de planes, administra
 
 ## Estructura principal
 
-- `config/`: configuración del proyecto Django
-- `gimnasio/`: app principal con vistas públicas y panel de administración
-- `rutinas/`: app para creación, edición y seguimiento de rutinas y sesiones de entrenamiento
-- `usuarios/`: app de autenticación y gestión de sesión personalizada
-- `clases/`: app auxiliar para clases del gimnasio
-- `templates/`: vistas HTML
-- `static/`: archivos CSS e imágenes
-- `media/`: archivos subidos como imágenes/videos de ejercicios
+- config/: configuración del proyecto Django
+- gimnasio/: app principal con vistas públicas y panel de administración
+- rutinas/: app para creación, edición y seguimiento de rutinas y sesiones de entrenamiento
+- usuarios/: app de autenticación y gestión de sesión personalizada
+- clases/: app auxiliar para clases del gimnasio
+- templates/: vistas HTML
+- static/: archivos CSS e imágenes
+- media/: archivos subidos como imágenes/videos de ejercicios
 
 ## Requisitos
 
@@ -31,92 +37,103 @@ Aplicación web en Django para gestión de gimnasio, venta de planes, administra
 1. Clona el repositorio o copia el proyecto a tu máquina.
 2. Navega al directorio del proyecto:
 
-```powershell
+powershell
 cd "c:\Users\crist\OneDrive\Documentos\Pagina-Gimnasio"
-```
 
 3. Crea y activa un entorno virtual:
 
-```powershell
+powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-```
 
 4. Instala dependencias:
 
-```powershell
+powershell
 pip install -r requirements.txt
-```
 
 5. Aplica migraciones:
 
-```powershell
+powershell
 django-admin migrate
-```
 
 6. Crea un superusuario para acceder al admin:
 
-```powershell
+powershell
 django-admin createsuperuser
-```
 
 ## Ejecución
 
 Inicia el servidor de desarrollo:
 
-```powershell
+powershell
 django-admin runserver
-```
 
 Luego abre en el navegador:
 
-```
 http://127.0.0.1:8000/
-```
 
 ## Rutas principales
 
-- `/` : página de presentación
-- `/planes/` : listados de planes disponibles
-- `/sobreNosotros/` : página sobre el gimnasio
-- `/galeria/` : galería de imágenes
-- `/comprar/<id_plan>/` : comprar un plan
-- `/inicio/` : inicio de sesión o página principal después de login
-- `/usuarios/login/` : login de usuario
-- `/usuarios/logout/` : cerrar sesión
-- `/rutinas/` : listado de rutinas
-- `/rutinas/crear/` : crear rutina
-- `/rutinas/<pk>/` : detalle de rutina
-- `/rutinas/<pk>/editar/` : editar rutina
-- `/rutinas/<pk>/eliminar/` : eliminar rutina
-- `/rutinas/<pk>/iniciar/` : iniciar sesión de entrenamiento
-- `/rutinas/sesion/<pk>/` : ejecutar rutina de entrenamiento
-- `/rutinas/sesion/<pk>/finalizar/` : finalizar sesión
-- `/rutinas/historial/` : historial de sesiones
+- / : página de presentación
+- /planes/ : listados de planes disponibles
+- /sobreNosotros/ : página sobre el gimnasio
+- /galeria/ : galería de imágenes
+- /comprar/<id_plan>/ : comprar un plan
+- /inicio/ : inicio de sesión o página principal después de login
+- /usuarios/login/ : login de usuario
+- /usuarios/logout/ : cerrar sesión
+- /rutinas/ : listado de rutinas
+- /rutinas/crear/ : crear rutina
+- /rutinas/<pk>/ : detalle de rutina
+- /rutinas/<pk>/editar/ : editar rutina
+- /rutinas/<pk>/eliminar/ : eliminar rutina
+- /rutinas/<pk>/iniciar/ : iniciar sesión de entrenamiento
+- /rutinas/sesion/<pk>/ : ejecutar rutina de entrenamiento
+- /rutinas/sesion/<pk>/finalizar/ : finalizar sesión
+- /rutinas/historial/ : historial de sesiones
 
 ## Configuración adicional
 
-- `AUTH_USER_MODEL = 'usuarios.Usuario'`
-- `LOGIN_REDIRECT_URL = '/planes/'`
-- `LOGOUT_REDIRECT_URL = '/'`
-- `ACCOUNT_LOGOUT_ON_GET = True`
-- `SOCIALACCOUNT_PROVIDERS` configurado para Google
-- Archivos multimedia guardados en `media/`
+- AUTH_USER_MODEL = 'usuarios.Usuario'
+- LOGIN_REDIRECT_URL = '/planes/'
+- LOGOUT_REDIRECT_URL = '/'
+- ACCOUNT_LOGOUT_ON_GET = True
+- SOCIALACCOUNT_PROVIDERS configurado para Google
+- Archivos multimedia guardados en media/
+
+## Flujo de trabajo Git
+
+- Crear una rama nueva para cada funcionalidad o corrección.
+- Nombrar las ramas de forma descriptiva (ej: feature/rutinas, fix/login).
+- Realizar commits claros y concisos.
+- Hacer push de la rama al repositorio remoto.
+- Crear un Pull Request para revisión antes de hacer merge a la rama principal.
+- Mantener la rama main estable y funcional.
+
+## Evidencias
+
+- Capturas de pantalla de la aplicación funcionando.
+- Pruebas de creación de usuarios y login.
+- Ejecución de compra de planes.
+- Creación y seguimiento de rutinas.
+- Uso del panel de administración.
 
 ## Notas
 
-- La base de datos usada es SQLite en el archivo `db.sqlite3`.
-- El proyecto está en modo `DEBUG = True`, no usar en producción sin adaptar seguridad.
-- `STATICFILES_DIRS` incluye el directorio `static/` para CSS e imágenes.
+- La base de datos usada es SQLite en el archivo db.sqlite3.
+- El proyecto está en modo DEBUG = True, no usar en producción sin adaptar seguridad.
+- STATICFILES_DIRS incluye el directorio static/ para CSS e imágenes.
 
 ## Uso
 
 - Registra un usuario o ingresa con Google si está configurado.
-- Compra planes desde `/planes/`.
+- Compra planes desde /planes/.
 - Administra planes y usuarios desde el panel administrativo si eres administrador.
 - Crea y realiza rutinas desde el módulo de rutinas.
-## autores
-Nombre | Código |Rol| Correo |
+
+## Autores
+
+Nombre | Código | Rol | Correo |
 |----|----|---|-----------|
-|Ana María Tique | 2220241069 |Front-end developer|ana.tique1@estudiantesunibague.edu.co |
-| Yaritxa Duarte | 2220241061 |Back-end developer| yaritxa.duarte@estudiantesunibague.edu.co |
+| Ana María Tique | 2220241069 | Front-end developer | ana.tique1@estudiantesunibague.edu.co |
+| Yaritxa Duarte | 2220241061 | Back-end developer | yaritxa.duarte@estudiantesunibague.edu.co |
